@@ -1,0 +1,447 @@
+type: collection.insomnia.rest/5.0
+name: Course app
+meta:
+  id: wrk_475ead5dfca44d30bfb2fbacb4729cfe
+  created: 1745661886930
+  modified: 1745661886930
+collection:
+  - name: User
+    meta:
+      id: fld_be18424d2f6141f28fbd48731d454c93
+      created: 1745953518645
+      modified: 1745953518645
+      sortKey: -1745953518645
+    children:
+      - url: http://localhost:3000/users/signup
+        name: User SignUp
+        meta:
+          id: req_4ff12606654c4e5aaf991ec139fe03df
+          created: 1745826655954
+          modified: 1745953531093
+          isPrivate: false
+          sortKey: -1745953530980
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "chan1", 
+            	"password": "12"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/users/login
+        name: User SignIn
+        meta:
+          id: req_3ea3dc6aad50483e944e5229e6f60256
+          created: 1745826762251
+          modified: 1745953534940
+          isPrivate: false
+          sortKey: -1745953531080
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "chan1", 
+            	"password": "12"
+            }
+        parameters:
+          - id: pair_d0634950068f4f8aa545dee9f00bfc60
+            disabled: false
+          - id: pair_c5248d9468a14fca97e05f79e80c77cc
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_b9aceda104ce41bb9f1df12fc6b8f5d9
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_c0e7a844be2a4548a0acb3e9101adc40
+          - id: pair_01f3a4e840094493ae9be31e4fa8b2af
+            disabled: false
+          - id: pair_64ec8d45fa1b45c19435f4b54c6fa3c6
+            disabled: false
+            type: text
+            multiline: false
+        authentication:
+          type: bearer
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/users/courses
+        name: User Courses
+        meta:
+          id: req_ebe97389f8644581a8f41d8fd7f0efc0
+          created: 1745953068792
+          modified: 1745953538018
+          isPrivate: false
+          sortKey: -1745953531180
+        method: GET
+        body:
+          mimeType: application/json
+        parameters:
+          - id: pair_d0634950068f4f8aa545dee9f00bfc60
+            disabled: false
+          - id: pair_c5248d9468a14fca97e05f79e80c77cc
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_b9aceda104ce41bb9f1df12fc6b8f5d9
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_c0e7a844be2a4548a0acb3e9101adc40
+          - id: pair_01f3a4e840094493ae9be31e4fa8b2af
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW4xIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDU5NTE5MTcsImV4cCI6MTc0NTk1NTUxN30.5gXHzheFYi3MLQ8b9vmFdiGZJM7LW4kSkHfwYRT2vzI
+            disabled: false
+          - id: pair_64ec8d45fa1b45c19435f4b54c6fa3c6
+            disabled: false
+            type: text
+            multiline: false
+        authentication:
+          type: bearer
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/users/courses/68111ce5450cae6915bcd42c
+        name: User Courses Purchase
+        meta:
+          id: req_6625b8737a07440fba35892944cbd5dc
+          created: 1745953255912
+          modified: 1745953543227
+          isPrivate: false
+          sortKey: -1745953531280
+        method: POST
+        body:
+          mimeType: application/json
+        parameters:
+          - id: pair_d0634950068f4f8aa545dee9f00bfc60
+            disabled: false
+          - id: pair_c5248d9468a14fca97e05f79e80c77cc
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_b9aceda104ce41bb9f1df12fc6b8f5d9
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_c0e7a844be2a4548a0acb3e9101adc40
+          - id: pair_01f3a4e840094493ae9be31e4fa8b2af
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW4xIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDU5NTE5MTcsImV4cCI6MTc0NTk1NTUxN30.5gXHzheFYi3MLQ8b9vmFdiGZJM7LW4kSkHfwYRT2vzI
+            disabled: false
+          - id: pair_64ec8d45fa1b45c19435f4b54c6fa3c6
+            disabled: false
+            type: text
+            multiline: false
+        authentication:
+          type: bearer
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/users/purchasedCourses
+        name: User Purchased Courses
+        meta:
+          id: req_fccae3140284491d8c39cf2f612736dd
+          created: 1745953412714
+          modified: 1745953546301
+          isPrivate: false
+          sortKey: -1745953531380
+        method: GET
+        body:
+          mimeType: application/json
+        parameters:
+          - id: pair_d0634950068f4f8aa545dee9f00bfc60
+            disabled: false
+          - id: pair_c5248d9468a14fca97e05f79e80c77cc
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_b9aceda104ce41bb9f1df12fc6b8f5d9
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_c0e7a844be2a4548a0acb3e9101adc40
+          - id: pair_01f3a4e840094493ae9be31e4fa8b2af
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW4xIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDU5NTE5MTcsImV4cCI6MTc0NTk1NTUxN30.5gXHzheFYi3MLQ8b9vmFdiGZJM7LW4kSkHfwYRT2vzI
+            disabled: false
+          - id: pair_64ec8d45fa1b45c19435f4b54c6fa3c6
+            disabled: false
+            type: text
+            multiline: false
+        authentication:
+          type: bearer
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Admin
+    meta:
+      id: fld_613afbe8ab924ce3a2fec6cb1cbf4275
+      created: 1745953558889
+      modified: 1745953558889
+      sortKey: -1745953558889
+    children:
+      - url: http://localhost:3000/admin/courses
+        name: Create Course
+        meta:
+          id: req_6a3914d5cc4a47169baef7970183e573
+          created: 1745661896022
+          modified: 1745953575859
+          isPrivate: false
+          sortKey: -1745953568202
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "mongo backend",
+              "description": "mongo backend",
+              "price": "2999",
+              "imageLink": "xyz",
+              "published": false
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_660fbcf05b3847819dce7b11f37248c2
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2ede24fc81244b2199df719a39a56702
+          - id: pair_4f8156be3ad946c1a35c03090c6081fa
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kYW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDU5NTE5MDUsImV4cCI6MTc0NTk1NTUwNX0.UZT5Yn_f1y5osxe5MidQyWH-vacUweRX-eRDldFpQ8A
+            disabled: false
+        authentication:
+          type: bearer
+          token: const authenticateJwt = (req, res, next) => {  const authHeader =
+            req.headers.authorization;  if (authHeader) {    const token =
+            authHeader.split(" ")[1];    jwt.verify(token, SECRET, (err, user)
+            => {      if (err) {        return
+            res.sendStatus(403);      }      req.user =
+            user;      next();    });  } else {    res.sendStatus(401);  }};
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/admin/signup
+        name: admin SignUp
+        meta:
+          id: req_b92328c520494e9c9a0f20414a7a2836
+          created: 1745661904740
+          modified: 1745953568163
+          isPrivate: false
+          sortKey: -1745953568002
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "chandan", 
+            	"password": "12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/admin/login
+        name: admin SignIn
+        meta:
+          id: req_b3b6948c943e4c19b53ec2c07352c0c9
+          created: 1745662137502
+          modified: 1745953572857
+          isPrivate: false
+          sortKey: -1745953568102
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "chandan", 
+            	"password": "12345"
+            }
+        parameters:
+          - id: pair_d0634950068f4f8aa545dee9f00bfc60
+            disabled: false
+          - id: pair_c5248d9468a14fca97e05f79e80c77cc
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_b9aceda104ce41bb9f1df12fc6b8f5d9
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_c0e7a844be2a4548a0acb3e9101adc40
+          - id: pair_01f3a4e840094493ae9be31e4fa8b2af
+            disabled: false
+          - id: pair_64ec8d45fa1b45c19435f4b54c6fa3c6
+            disabled: false
+            type: text
+            multiline: false
+        authentication:
+          type: bearer
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/admin/courses/68111ffa0420dd7583408ec8
+        name: Update Course
+        meta:
+          id: req_2e2ee5d6823b4199bbb8689ab4fcea3c
+          created: 1745952284618
+          modified: 1745953578627
+          isPrivate: false
+          sortKey: -1745953568302
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "java backend",
+              "description": "java j2ee backend",
+              "price": "4199",
+              "imageLink": "wwee xyz",
+              "published": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_660fbcf05b3847819dce7b11f37248c2
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2ede24fc81244b2199df719a39a56702
+          - id: pair_4f8156be3ad946c1a35c03090c6081fa
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kYW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDU5NTE5MDUsImV4cCI6MTc0NTk1NTUwNX0.UZT5Yn_f1y5osxe5MidQyWH-vacUweRX-eRDldFpQ8A
+            disabled: false
+        authentication:
+          type: bearer
+          token: const authenticateJwt = (req, res, next) => {  const authHeader =
+            req.headers.authorization;  if (authHeader) {    const token =
+            authHeader.split(" ")[1];    jwt.verify(token, SECRET, (err, user)
+            => {      if (err) {        return
+            res.sendStatus(403);      }      req.user =
+            user;      next();    });  } else {    res.sendStatus(401);  }};
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/admin/courses/68111ffa0420dd7583408ec8
+        name: Delete Course
+        meta:
+          id: req_b4bda56708214b76b51a592329cc3173
+          created: 1745952924874
+          modified: 1745953581279
+          isPrivate: false
+          sortKey: -1745953568402
+        method: DELETE
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_660fbcf05b3847819dce7b11f37248c2
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_2ede24fc81244b2199df719a39a56702
+          - id: pair_4f8156be3ad946c1a35c03090c6081fa
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNoYW5kYW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDU5NTE5MDUsImV4cCI6MTc0NTk1NTUwNX0.UZT5Yn_f1y5osxe5MidQyWH-vacUweRX-eRDldFpQ8A
+            disabled: false
+        authentication:
+          type: bearer
+          token: const authenticateJwt = (req, res, next) => {  const authHeader =
+            req.headers.authorization;  if (authHeader) {    const token =
+            authHeader.split(" ")[1];    jwt.verify(token, SECRET, (err, user)
+            => {      if (err) {        return
+            res.sendStatus(403);      }      req.user =
+            user;      next();    });  } else {    res.sendStatus(401);  }};
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_bff307bfd7cc083dc7d20fd0862202ddff0f400e
+    created: 1745661886938
+    modified: 1745661886938
+environments:
+  name: Base Environment
+  meta:
+    id: env_bff307bfd7cc083dc7d20fd0862202ddff0f400e
+    created: 1745661886934
+    modified: 1745661886934
+    isPrivate: false
