@@ -1,8 +1,10 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 const SECRET = "SECr3t"; // This should be in an environment variable in a real application
@@ -61,7 +63,7 @@ mongoose
 
 app.post("/admin/signup", (req, res) => {
   const { username, password } = req.body;
-  console.log(username);
+  console.log(req.body);
   function callback(admin) {
     if (admin) {
       res.status(403).json({ message: "Admin already exists" });
@@ -77,6 +79,7 @@ app.post("/admin/signup", (req, res) => {
 
 app.post("/admin/login", async (req, res) => {
   const { username, password } = req.body;
+  console.log(req.body);
   const admin = await Admin.findOne({ username, password });
   if (admin) {
     const token = jwt.sign({ username, role: "admin" }, SECRET, {

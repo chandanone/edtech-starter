@@ -1,9 +1,10 @@
-import Appbar from "../components/Appbar"
+import Login from "./SignIn"
+import SignUp from "./SignUp"
 
 function Home() {
     return (
         <div className="title" style={{textAlign: "center"}}>
-            <h2>Welcome to DevOps Crow platform</h2>
+            <Login />
         </div>
     )
 }
