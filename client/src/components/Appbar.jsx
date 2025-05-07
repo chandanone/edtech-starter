@@ -1,29 +1,60 @@
-import {Link} from "react-router-dom" 
+import { Button, Card, Link, TextField } from "@mui/material";
+import { useEffect, useState } from "react";
 
-function Appbar() {
+export default function AppBar() {
+    const [userEmail, setUserEmail] = useState(null)
+
+    useEffect(()=> {
+       fetch("http://localhost:3000/admin/me",{
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer "+localStorage.getItem("token")
+                }
+        })
+        .then(res => res.json())
+        .then((data)=> {
+            if (data.username) {
+                setUserEmail(data.username)            
+            }
+        })               
+    },[])
+
     return (
-        <div className="head" style={{
+        <div style={{
             display: "flex",
             justifyContent: "space-between",
-            marginLeft: "150px",
-            marginRight: "150px",
-            marginBottom: "20px",
-            fontSize: 20
+            margin: 20,
         }}>
-            <div className="logo">
-                <Link style={{ textDecoration: "none"}} to="/">DevOps Crown</Link>
+            <div style={{ fontSize: 20, fontWeight: "bold" }}>
+                <Button style={{ textDecoration: "none", fontSize: 20, fontWeight: "bold", fontFamily: "cursive", color: "tomato" }}>High On Devops</Button>
             </div>
-            <div className="nav" style={{
+            <div style={{
                 display: "flex",
-                gap: 100,
+                gap: 5
             }}>
-                {/* <Link style={{ textDecoration: "none"}} to="/about">About</Link>*/}
-                <Link style={{ textDecoration: "none"}} to="/addcourse">AddCourse</Link> 
-                <Link style={{ textDecoration: "none"}} to="/signup">Sign Up</Link>
-                <Link style={{ textDecoration: "none"}} to="/signin">Sign In</Link>
+                {userEmail ? (
+                    <>
+                        <span>{userEmail}</span>
+                        <Button variant="contained" onClick={() => {
+                            localStorage.setItem("token", null)
+                            window.location = "/"
+                        }}>Sign Out</Button>
+                    </>
+                ) : (
+                    <>
+                        <Button variant="contained" onClick={() => {
+                            window.location = "/signup"
+                        }}>Sign Up</Button>
+                        <Button variant="contained" onClick={() => {
+                            window.location = "/"
+                        }}>Sign In</Button>
+                    </>
+                )} 
             </div>
         </div>
-    )
-} 
+    );
+}
 
-export default Appbar
+
+

@@ -1,19 +1,20 @@
-import { Button, Card, TextField } from "@mui/material"
-import { useState } from "react"
+import { Button, Card, TextField } from "@mui/material";
+import { useState } from "react";
 
-function AddCourse(){
-const [title, setTitle] = useState("")
-const [description, setDescription] = useState("")
+export default function AddCourse() {
+    const [title, setTitle] = useState(null)
+    const [description, setDescription] = useState(null)
     return (
-        <div style={{ display: "flex", justifyContent: "center"}}>
-            <Card variant="outlined" style={{width: 400, padding: 20, display: "flex", flexDirection: "column", gap: 15}} >
-                <TextField fullWidth={true} label="Title" variant="outlined" onChange={(e) => {
-                    setTitle(e.target.value)
-                }} />
-                <TextField fullWidth={true} label="Description" variant="outlined" onChange={(e) => {
-                    setDescription(e.target.value)
-                }} />
-                <Button variant="outlined" onClick={()=> {
+        <Card variant="outlined" style={{width: 400, padding: 20, margin: 100, display: "flex", flexDirection: "column", gap: 15}}>
+            <TextField variant="outlined" id="title" label="Title" onChange={(e)=> {
+                setTitle(e.target.value)
+            }}>Title</TextField>
+            <TextField variant="outlined" id="description" label="Description" onChange={(e)=>{
+                setDescription(e.target.value)
+            }}>Description</TextField>
+            <div style={{ display: "flex", gap: 10}}>
+                <Button variant="contained" style={{ width: 100}} onClick={()=> {
+                    
                     fetch("http://localhost:3000/admin/courses",{
                         method: "POST",
                         headers: {
@@ -22,15 +23,17 @@ const [description, setDescription] = useState("")
                         },
                         body: JSON.stringify({
                             title,
-                            description,
-                            imageLink: "",
-                            published: true
+                            description
                         })
                     })
-                }}>ADD COURSE</Button>
-            </Card>
-        </div>
+                    .then((res) => res.json())
+                    .then((data)=> {
+                        console.log(data)
+                        window.location = "/courses"
+                    })
+                }}>Add Course</Button>
+            </div>
+            
+        </Card>
     )
 }
-
-export default AddCourse
